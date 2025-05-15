@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './Content.module.css'
+import React from 'react';
+import styles from './Content.module.css';
 
 function Content() {
     return (
-        <div>Content</div>
+        <div className={styles.content}>Content</div>
     )
 }
 

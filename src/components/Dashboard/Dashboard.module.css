@@ -1,3 +1,7 @@
+.dashboard {
+    height: 100%;
+}
+
 .header {
     height: 100px;
     display: flex;
@@ -13,6 +17,7 @@
 }
 
 .selectButton {
+    position: relative;
     display: flex;
     align-items: center;
     border: 1px solid #32854a;
@@ -21,17 +26,20 @@
     background-color: #32854a;
     cursor: pointer;
     color: #f3f3f3;
+    transition: all 0.1s ease;
+}
+
+.selectButton:active {
+    color: #32854a;
+    background-color: #f3f3f3;
 }
 
 .text {
     font-size: 20px;
     font-weight: 600;
-
-
 }
 
 .arrow {
-    /* color: #f3f3f3; */
     line-height: 16px;
     width: 55px;
     border-left: 2px solid #a3a3a3;
@@ -40,9 +48,48 @@
     margin-left: 15px;
 }
 
+.selectlist {
+    all: unset;
+    background-color: #f3f3f3;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    border: 1px solid #535353;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: default;
+    /* opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000; */
+}
+
+.selectlist.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.selectlist>p {
+    padding: 5px 10px;
+    background-color: #32854a;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.selectlist>p:active {
+    color: #32854a;
+    background-color: #f3f3f3;
+}
+
 .main {
     width: 100%;
     margin-top: 15px;
     display: grid;
     grid-template-columns: 25% 75%;
+    align-items: stretch;
 }
